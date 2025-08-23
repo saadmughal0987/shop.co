@@ -7,14 +7,14 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
 
   const colors = [
-    "#8B4513", // brown
-    "#000000", // black
-    "#006400", // green
-    "#8B0000", // red
-    "#FFD700", // yellow
-    "#FF4500", // orange
-    "#00CED1", // teal
-    "#1E90FF", // blue
+    "#8B4513", 
+    "#000000", 
+    "#006400", 
+    "#8B0000", 
+    "#FFD700", 
+    "#FF4500", 
+    "#00CED1", 
+    "#1E90FF", 
   ];
 
   const sizes = ["Small", "Medium", "Large", "X-Large"];

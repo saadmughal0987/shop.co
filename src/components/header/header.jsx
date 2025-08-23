@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";   // 👈 Import Link
 import "./header.css";
 
 const Header = () => {
@@ -47,16 +48,16 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary px-3">
       <div className="container-fluid">
-        <a className="navbar-brand fs-4 " href="/">
+        <Link className="navbar-brand fs-4" to="/">
           SHOP.CO
-        </a>
+        </Link>
 
-        <a
-          href="/cart"
+        <Link
+          to="/add-to-cart-page"
           className="d-lg-none d-flex align-items-center ms-auto me-2"
         >
           <i className="fas fa-shopping-cart fa-lg cart-icon"></i>
-        </a>
+        </Link>
 
         <button
           className="navbar-toggler border-0"
@@ -73,7 +74,14 @@ const Header = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav mb-2 mb-lg-0">
-            <li className="nav-item"></li>
+            <li className="nav-item">
+              <button
+                className="nav-link btn border-0 bg-transparent"
+                onClick={(e) => handleNavClick(e, "")}
+              >
+                Shop
+              </button>
+            </li>
             <li className="nav-item">
               <button
                 className="nav-link btn border-0 bg-transparent"
@@ -118,9 +126,9 @@ const Header = () => {
           </form>
 
           <div className="d-flex align-items-center">
-            <a href="/cart" className="d-none d-lg-flex align-items-center">
+            <Link to="/add-to-cart-page" className="d-none d-lg-flex align-items-center">
               <i className="fas fa-shopping-cart fa-lg cart-icon me-4"></i>
-            </a>
+            </Link>
             <button
               onClick={toggleDarkMode}
               className="btn toggle-dark-btn"
@@ -152,7 +160,14 @@ const Header = () => {
 
         <div className="offcanvas-body d-flex flex-column justify-content-between">
           <ul className="navbar-nav">
-            <li className="nav-item"></li>
+            <li className="nav-item">
+              <button
+                className="nav-link btn border-0 bg-transparent"
+                onClick={(e) => handleNavClick(e, "")}
+              >
+                Shop
+              </button>
+            </li>
             <li className="nav-item">
               <button
                 className="nav-link btn border-0 bg-transparent"

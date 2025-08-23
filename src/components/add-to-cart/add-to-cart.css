@@ -1,0 +1,51 @@
+.container-fluid {
+  padding-top: 22 !important;
+  padding-bottom: 22 !important;
+  margin-bottom: 12px;
+}
+
+.emptycart-img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.emptycart-title {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: 48px !important;
+    line-height: 48px !important;
+    color: #000 !important;
+    font-weight: 400 !important;
+}
+
+.emptycart-text {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 400px;
+}
+
+.emptycart-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background-color: #000;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 12px 58px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: none;
+}
+
+/* hover hata diya */
+.emptycart-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.emptycart-img {
+    max-width: 650px; /* thoda chhota ki scroll na aaye */
+    width: 100%;
+    height: auto;
+}
