@@ -1,51 +1,65 @@
-.container-fluid {
-  padding-top: 22 !important;
-  padding-bottom: 22 !important;
-  margin-bottom: 12px;
+.emptycart-container {
+  transition: all 0.3s ease-in-out;
 }
-
-.emptycart-img {
-  max-width: 100%;
-  height: auto;
-}
-
 
 .emptycart-title {
-    font-family: "Special Gothic Expanded One", sans-serif;
-    font-size: 48px !important;
-    line-height: 48px !important;
-    color: #000 !important;
-    font-weight: 400 !important;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-size: 48px !important;
+  line-height: 48px !important;
+  color: #000 !important;
+  font-weight: 400 !important;
 }
 
 .emptycart-text {
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    color: #555;
-    max-width: 400px;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 400px;
 }
 
 .emptycart-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    background-color: #000;
-    color: #fff;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 12px 58px;
-    border-radius: 50px;
-    text-decoration: none;
-    border: none;
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #000;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 12px 58px;
+  border-radius: 50px;
+  text-decoration: none;
+  border: none;
 }
 
-/* hover hata diya */
 .emptycart-btn:hover {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
 
 .emptycart-img {
-    max-width: 650px; /* thoda chhota ki scroll na aaye */
-    width: 100%;
-    height: auto;
+  max-width: 650px;
+  width: 100%;
+  height: auto;
+}
+
+body.dark-mode .emptycart-container {
+  background-color: #111;
+}
+
+body.dark-mode .emptycart-title {
+  color: #fff !important;
+}
+
+body.dark-mode .emptycart-text {
+  color: #ffffff;
+}
+
+body.dark-mode .emptycart-btn {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode .emptycart-btn:hover {
+  transform: scale(1.03)
 }
