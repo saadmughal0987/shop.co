@@ -56,13 +56,13 @@ const products = [
   },
   {
     id: 6,
-    name: "Sleeve Stripped T-Shirt",
+    name: "Courage Graphic T-Shirt",
     rating: 4.1,
     price: 220,
     oldPrice: 260,
     discount: "-15%",
-    image: "/assets/stripped-t-Shirt.svg",
-    link: "/striped-tshirt-details",
+    image: "/assets/courage-graphic-tshirt.svg",
+    link: "/courage-tshirt-details",
   },
   {
     id: 7,

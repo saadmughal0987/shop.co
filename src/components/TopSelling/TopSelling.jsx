@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 const products = [
   {
     id: 1,
-    name: "Vertical Stripped Shirt",
+    name: "Skinny fit jeans",
     rating: 4.1,
     price: 220,
     oldPrice: 260,
     discount: "-15%",
-    image: "/assets/Vertical-stripped-Shirt.svg",
-    link: "/vertical-shirt-details", 
+    image: "/assets/Skinny-fit-jeans.svg",
+    link: "/jeans-details", 
   },
   {
     id: 2,

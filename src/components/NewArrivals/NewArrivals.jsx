@@ -47,13 +47,13 @@ const products = [
   },
   {
     id: 5,
-    name: "Vertical Stripped Shirt",
+    name: "Polo with contrast Trims",
     rating: 4.1,
     price: 220,
     oldPrice: 260,
     discount: "-15%",
-    image: "/assets/Vertical-stripped-Shirt.svg",
-    link: "/vertical-shirt-details", 
+    image: "/assets/polo-t-shirt.svg",
+    link: "/polo-tshirt-details", 
   },
 ];
 

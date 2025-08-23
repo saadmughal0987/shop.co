@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 const products = [
   {
     id: 1,
-    name: "Vertical Stripped Shirt",
-    rating: 4.1,
-    price: 220,
-    oldPrice: 260,
-    discount: "-15%",
-    image: "/assets/Vertical-stripped-Shirt.svg",
-    link: "/vertical-shirt-details", 
+    name: "Polo with Contrast Trims",
+    rating: 4.2,
+    price: 180,
+    oldPrice: 220,
+    discount: "-18%",
+    image: "/assets/polo-t-shirt.svg",
+    link: "/polo-tshirt-details",
   },
   {
     id: 2,
