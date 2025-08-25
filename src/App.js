@@ -13,7 +13,8 @@ import RelaxedShorts from './pages/Relaxed-Fit-Shorts-page/Relaxed-Fit-Shorts-pa
 import FadedJeans from './pages/Faded-Skinny-Jeans-page/Faded-Skinny-Jeans-page';
 import GraphicShirt from './pages/Graphic-Shirt-page/Graphic-Shirt-page';
 import PoloShirt from './pages/Polo-T-Shirt-page/Polo-T-Shirt-page';
-import CartPage from './pages/CartPage/CartPage';   // 👈 new wrapper
+import Checkout from './pages/Checkout-page/Checkout-page';
+import CartPage from './pages/CartPage/CartPage';  
 
 import { CartProvider } from './Context/CartContext';
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="/graphic-tshirt-details" element={<GraphicShirt />} />
           <Route path="/polo-tshirt-details" element={<PoloShirt />} />
           <Route path="/add-to-cart-page" element={<CartPage />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
     </CartProvider>

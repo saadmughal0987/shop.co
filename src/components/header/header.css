@@ -1,17 +1,19 @@
 ::selection {
     background-color: #000;
     color: #fff;
+
 }
 
 .navbar {
     padding-top: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow-x: hidden;
+
 }
 
 .navbar-brand {
     font-family: "Special Gothic Expanded One", sans-serif;
-    font-weight: 400;
+    font-weight: bold;
     color: black;
     font-size: 30px !important;
     line-height: 40px;
@@ -141,6 +143,11 @@ body.dark-mode .cart-icon {
 
 .dark-mode .toggle-dark-btn {
     color: #fff !important;
+}
+
+body.dark-mode ::selection {
+    background-color: #fff;
+    color: #000;
 }
 
 .toggle-dark-btn {

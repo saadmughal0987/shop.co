@@ -111,8 +111,10 @@ const FilledCart = () => {
               Use promo code <b>Moemen</b> for 20% discount
             </p>
 
-            {/* Checkout Button */}
-            <button className="btn btn-dark w-100 checkout-btn">Go to Checkout</button>
+            {/* Checkout Button with Link */}
+            <Link to="/checkout" className="btn btn-dark w-100 checkout-btn text-center text-decoration-none">
+              Go to Checkout
+            </Link>
           </div>
         </div>
       </div>

@@ -69,12 +69,22 @@
 
 .apply-btn {
   border-radius: 0 6px 6px 0;
+  background-color: black;
+}
+
+.apply-btn:hover {
+  background-color: black;
+
 }
 
 .checkout-btn {
   border-radius: 8px;
   font-weight: 600;
   padding: 10px 0;
+  background-color: black;
+}
+.checkout-btn:hover{
+  background-color: black;
 }
 
 .cart-box,
@@ -95,9 +105,7 @@
 body.dark-mode .cart-box,
 body.dark-mode .summary-box {
   background: #1e1e1e;
-  /* dark bg */
   color: #f5f5f5;
-  /* text white */
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
 }
 
