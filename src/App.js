@@ -13,28 +13,32 @@ import RelaxedShorts from './pages/Relaxed-Fit-Shorts-page/Relaxed-Fit-Shorts-pa
 import FadedJeans from './pages/Faded-Skinny-Jeans-page/Faded-Skinny-Jeans-page';
 import GraphicShirt from './pages/Graphic-Shirt-page/Graphic-Shirt-page';
 import PoloShirt from './pages/Polo-T-Shirt-page/Polo-T-Shirt-page';
-import AddCart from './pages/add-to-cart-page/add-to-cart-page';
+import CartPage from './pages/CartPage/CartPage';   // 👈 new wrapper
+
+import { CartProvider } from './Context/CartContext';
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<HeroPage />} />
-        <Route path="/tshirt-details" element={<Tshirt />} />
-        <Route path="/jeans-details" element={<Jeans />} />
-        <Route path="/checkered-shirt-details" element={<Shirt />} />
-        <Route path="/striped-tshirt-details" element={<TShirts />} />
-        <Route path="/vertical-shirt-details" element={<VerticalShirt />} />
-        <Route path="/courage-tshirt-details" element={<CourageShirt />} />
-        <Route path="/loose-shorts-details" element={<Shorts />} />
-        <Route path="/relaxed-shorts-details" element={<RelaxedShorts />} />
-        <Route path="/skinny-jeans-details" element={<FadedJeans />} />
-        <Route path="/graphic-tshirt-details" element={<GraphicShirt />} />
-        <Route path="/polo-tshirt-details" element={<PoloShirt />} />
-        <Route path="/add-to-cart-page" element={<AddCart />} />
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<HeroPage />} />
+          <Route path="/tshirt-details" element={<Tshirt />} />
+          <Route path="/jeans-details" element={<Jeans />} />
+          <Route path="/checkered-shirt-details" element={<Shirt />} />
+          <Route path="/striped-tshirt-details" element={<TShirts />} />
+          <Route path="/vertical-shirt-details" element={<VerticalShirt />} />
+          <Route path="/courage-tshirt-details" element={<CourageShirt />} />
+          <Route path="/loose-shorts-details" element={<Shorts />} />
+          <Route path="/relaxed-shorts-details" element={<RelaxedShorts />} />
+          <Route path="/skinny-jeans-details" element={<FadedJeans />} />
+          <Route path="/graphic-tshirt-details" element={<GraphicShirt />} />
+          <Route path="/polo-tshirt-details" element={<PoloShirt />} />
+          <Route path="/add-to-cart-page" element={<CartPage />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./add-to-cart.css";
+import "./EmptyCart.css";
 
 const EmptyCart = () => {
   const [darkMode, setDarkMode] = useState(() => {

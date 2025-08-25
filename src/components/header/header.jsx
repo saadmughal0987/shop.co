@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";   // 👈 Import Link
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "./header.css";
+import { CartContext } from "../../Context/CartContext";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(() => {
@@ -8,9 +10,9 @@ const Header = () => {
     return savedMode === "true";
   });
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-  };
+  const { totalQty } = useContext(CartContext);
+
+  const handleSearch = (e) => e.preventDefault();
 
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => {
@@ -21,27 +23,15 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add("dark-mode");
-    } else {
-      document.body.classList.remove("dark-mode");
-    }
+    if (darkMode) document.body.classList.add("dark-mode");
+    else document.body.classList.remove("dark-mode");
   }, [darkMode]);
 
-  const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-
-    const offcanvasEl = document.getElementById("mobileOffcanvas");
-    if (offcanvasEl) {
-      const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasEl);
+  const handleNavClick = () => {
+    const offcanvas = document.getElementById("mobileOffcanvas");
+    if (offcanvas && window.bootstrap) {
+      const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvas);
       if (bsOffcanvas) bsOffcanvas.hide();
-    }
-
-    if (targetId) {
-      const section = document.querySelector(targetId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
     }
   };
 
@@ -52,11 +42,17 @@ const Header = () => {
           SHOP.CO
         </Link>
 
+        {/* Mobile cart icon */}
         <Link
           to="/add-to-cart-page"
           className="d-lg-none d-flex align-items-center ms-auto me-2"
         >
-          <i className="fas fa-shopping-cart fa-lg cart-icon"></i>
+          <div className="cart-icon-wrapper">
+            <i className="fas fa-shopping-cart fa-lg cart-icon"></i>
+            {totalQty > 0 && (
+              <span className="cart-badge">{totalQty}</span>
+            )}
+          </div>
         </Link>
 
         <button
@@ -75,36 +71,24 @@ const Header = () => {
         >
           <ul className="navbar-nav mb-2 mb-lg-0">
             <li className="nav-item">
-              <button
-                className="nav-link btn border-0 bg-transparent"
-                onClick={(e) => handleNavClick(e, "")}
-              >
+              <HashLink smooth to="/#shop" className="nav-link">
                 Shop
-              </button>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <button
-                className="nav-link btn border-0 bg-transparent"
-                onClick={(e) => handleNavClick(e, "#New-Arrivals")}
-              >
+              <HashLink smooth to="/#New-Arrivals" className="nav-link">
                 New Arrivals
-              </button>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <button
-                className="nav-link btn border-0 bg-transparent"
-                onClick={(e) => handleNavClick(e, "#top-selling")}
-              >
+              <HashLink smooth to="/#top-selling" className="nav-link">
                 Top Selling
-              </button>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <button
-                className="nav-link btn border-0 bg-transparent"
-                onClick={(e) => handleNavClick(e, "#on-sale")}
-              >
+              <HashLink smooth to="/#on-sale" className="nav-link">
                 On Sale
-              </button>
+              </HashLink>
             </li>
           </ul>
 
@@ -126,8 +110,17 @@ const Header = () => {
           </form>
 
           <div className="d-flex align-items-center">
-            <Link to="/add-to-cart-page" className="d-none d-lg-flex align-items-center">
-              <i className="fas fa-shopping-cart fa-lg cart-icon me-4"></i>
+            {/* Desktop cart icon */}
+            <Link
+              to="/add-to-cart-page"
+              className="d-none d-lg-flex align-items-center"
+            >
+              <div className="cart-icon-wrapper me-4">
+                <i className="fas fa-shopping-cart fa-lg cart-icon"></i>
+                {totalQty > 0 && (
+                  <span className="cart-badge">{totalQty}</span>
+                )}
+              </div>
             </Link>
             <button
               onClick={toggleDarkMode}
@@ -140,6 +133,7 @@ const Header = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <div
         className="offcanvas offcanvas-end d-lg-none"
         tabIndex="-1"
@@ -161,37 +155,46 @@ const Header = () => {
         <div className="offcanvas-body d-flex flex-column justify-content-between">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <button
-                className="nav-link btn border-0 bg-transparent"
-                onClick={(e) => handleNavClick(e, "")}
+              <HashLink
+                smooth
+                to="/#shop"
+                className="nav-link"
+                onClick={handleNavClick}
               >
                 Shop
-              </button>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <button
-                className="nav-link btn border-0 bg-transparent"
-                onClick={(e) => handleNavClick(e, "#New-Arrivals")}
+              <HashLink
+                smooth
+                to="/#New-Arrivals"
+                className="nav-link"
+                onClick={handleNavClick}
               >
                 New Arrivals
-              </button>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <button
-                className="nav-link btn border-0 bg-transparent"
-                onClick={(e) => handleNavClick(e, "#top-selling")}
+              <HashLink
+                smooth
+                to="/#top-selling"
+                className="nav-link"
+                onClick={handleNavClick}
               >
                 Top Selling
-              </button>
+              </HashLink>
             </li>
             <li className="nav-item">
-              <button
-                className="nav-link btn border-0 bg-transparent"
-                onClick={(e) => handleNavClick(e, "#on-sale")}
+              <HashLink
+                smooth
+                to="/#on-sale"
+                className="nav-link"
+                onClick={handleNavClick}
               >
                 On Sale
-              </button>
+              </HashLink>
             </li>
+
             <li className="nav-item mt-2">
               <form onSubmit={handleSearch}>
                 <div className="input-group custom-search-bar-mobile">

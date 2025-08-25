@@ -68,7 +68,7 @@ const products = [
 
 const NewArrivals = () => {
   return (
-    <section className="new-arrivals-section py-5" id="top-selling">
+    <section className="new-arrivals-section py-5" >
       <div className="custom-container">
         <h2 className="text-center fw-bold mb-4 title responsive-title">
           YOU MIGHT ALSO LOOK LIKE

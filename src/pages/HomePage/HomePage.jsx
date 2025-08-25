@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import Header from "../../components/header/header";
 import HeroSection from "../../components/hero/HeroSection";
 import BrandStrip from "../../components/BrandStrip/BrandStrip";
@@ -9,15 +11,39 @@ import Testimonials from "../../components/Testimonials/Testimonials";
 import NewsLetter from "../../components/Newsletter/Newsletter";
 import Footer from "../../components/Footer/Footer";
 
-function App() {
+function HomePage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <div>
       <Header />
       <HeroSection />
       <BrandStrip />
-      <NewArrivals />
-      <TopSelling />
-      <OnSale />
+
+      <div id="New-Arrivals">
+        <NewArrivals />
+      </div>
+
+      <div id="top-selling">
+        <TopSelling />
+      </div>
+
+      <div id="on-sale">
+        <OnSale />
+      </div>
+
       <Testimonials />
       <NewsLetter />
       <Footer />
@@ -25,4 +51,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;
