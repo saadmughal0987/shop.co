@@ -70,11 +70,7 @@ const Header = () => {
           id="navbarNav"
         >
           <ul className="navbar-nav mb-2 mb-lg-0">
-            <li className="nav-item">
-              <HashLink smooth to="/#shop" className="nav-link">
-                Shop
-              </HashLink>
-            </li>
+           
             <li className="nav-item">
               <HashLink smooth to="/#New-Arrivals" className="nav-link">
                 New Arrivals
@@ -110,7 +106,6 @@ const Header = () => {
           </form>
 
           <div className="d-flex align-items-center">
-            {/* Desktop cart icon */}
             <Link
               to="/add-to-cart-page"
               className="d-none d-lg-flex align-items-center"
@@ -133,7 +128,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className="offcanvas offcanvas-end d-lg-none"
         tabIndex="-1"

@@ -9,14 +9,14 @@ const ProductDetail = () => {
   const { addToCart } = useContext(CartContext);
 
   const colors = [
-    "#8B4513", // brown
-    "#000000", // black
-    "#006400", // green
-    "#8B0000", // red
-    "#FFD700", // yellow
-    "#FF4500", // orange
-    "#00CED1", // teal
-    "#1E90FF", // blue
+    "#8B4513",
+    "#000000", 
+    "#006400", 
+    "#8B0000", 
+    "#FFD700", 
+    "#FF4500", 
+    "#00CED1", 
+    "#1E90FF", 
   ];
 
   const sizes = ["Small", "Medium", "Large", "X-Large"];
@@ -24,10 +24,9 @@ const ProductDetail = () => {
   const increaseQty = () => setQuantity((q) => q + 1);
   const decreaseQty = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
-  // Add to cart handler
   const handleAdd = () => {
     addToCart({
-      id: 7, // unique product ID
+      id: 7, 
       name: "Loose Fit Bermuda Shorts",
       price: 120,
       image: "/assets/loose-fit-shorts.svg",
@@ -39,19 +38,17 @@ const ProductDetail = () => {
 
   return (
     <div className="container py-5 product-container">
-      {/* Breadcrumb */}
       <nav className="breadcrumb">
         <a href="/" className="breadcrumb-item text-decoration-none nav-links">
           Home
         </a>
-        <a href="/shop" className="breadcrumb-item text-decoration-none nav-links">
+        <a href="/#New-Arrivals" className="breadcrumb-item text-decoration-none nav-links">
           Shop
         </a>
         <span className="breadcrumb-item active nav">Loose Fit Bermuda Shorts</span>
       </nav>
 
       <div className="row g-5">
-        {/* Product Image */}
         <div className="col-lg-6 text-center">
           <div className="product-image-wrapper">
             <img
@@ -62,7 +59,6 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        {/* Product Info */}
         <div className="col-lg-6">
           <h2 className="fw-bold heading">LOOSE FIT BERMUDA SHORTS</h2>
           <p className="mb-1">
@@ -71,7 +67,6 @@ const ProductDetail = () => {
           <h4 className="fw-bold mb-4 price">$120</h4>
           <hr />
 
-          {/* Colors */}
           <h6 className="mb-2">Select Colors</h6>
           <div className="d-flex flex-wrap mb-4">
             {colors.map((color, index) => (
@@ -89,7 +84,6 @@ const ProductDetail = () => {
           </div>
           <hr />
 
-          {/* Sizes */}
           <h6 className="mb-2">Choose Size</h6>
           <div className="mb-4 ">
             {sizes.map((size, index) => (
@@ -106,7 +100,6 @@ const ProductDetail = () => {
           </div>
           <hr />
 
-          {/* Quantity & Add to Cart */}
           <div className="d-flex align-items-center mb-4">
             <div
               className="input-group quantity-group me-3 qty-selection"

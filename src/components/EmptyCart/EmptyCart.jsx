@@ -33,7 +33,7 @@ const EmptyCart = () => {
           <p className="emptycart-text">
             Must add items on the cart before you proceed to checkout
           </p>
-          <a href="/shop" className="emptycart-btn">
+          <a href="/#New-Arrivals" className="emptycart-btn">
             Go to Shop
           </a>
         </div>

@@ -42,7 +42,7 @@ const ProductDetail = () => {
         <a href="/" className="breadcrumb-item text-decoration-none nav-links">
           Home
         </a>
-        <a href="/shop" className="breadcrumb-item text-decoration-none nav-links">
+        <a href="/#New-Arrivals" className="breadcrumb-item text-decoration-none nav-links">
           Shop
         </a>
         <span className="breadcrumb-item active nav">Faded Skinny Jeans</span>

@@ -26,7 +26,7 @@ const ProductDetail = () => {
 
   const handleAdd = () => {
     addToCart({
-      id: 11, // unique id for this product
+      id: 11, 
       name: "Vertical Stripped Shirts",
       price: 120,
       image: "/assets/Vertical-Stripped-Shirt.svg",
@@ -42,7 +42,7 @@ const ProductDetail = () => {
         <a href="/" className="breadcrumb-item text-decoration-none nav-links">
           Home
         </a>
-        <a href="/shop" className="breadcrumb-item text-decoration-none nav-links">
+        <a href="/#New-Arrivals" className="breadcrumb-item text-decoration-none nav-links">
           Shop
         </a>
         <span className="breadcrumb-item active nav">Vertical Stripped Shirts</span>

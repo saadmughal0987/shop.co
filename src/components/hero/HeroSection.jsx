@@ -16,7 +16,7 @@ const HeroSection = () => {
           designed to bring out your individuality and cater to your sense of style.
         </p>
 
-        <a href="#" className="hero-button">
+        <a href="/#New-Arrivals" className="hero-button">
           Shop Now
         </a>
 
