@@ -27,11 +27,20 @@ const Header = () => {
     else document.body.classList.remove("dark-mode");
   }, [darkMode]);
 
-  const handleNavClick = () => {
+  const handleNavClick = (hash) => {
     const offcanvas = document.getElementById("mobileOffcanvas");
     if (offcanvas && window.bootstrap) {
       const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvas);
-      if (bsOffcanvas) bsOffcanvas.hide();
+      if (bsOffcanvas) {
+        // Scroll to the section after offcanvas is fully hidden
+        offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, { once: true });
+        bsOffcanvas.hide();
+      }
     }
   };
 
@@ -150,9 +159,9 @@ const Header = () => {
             <li className="nav-item">
               <HashLink
                 smooth
-                to="/#shop"
+                to="/#Hero"
                 className="nav-link"
-                onClick={handleNavClick}
+                onClick={() => handleNavClick('#Hero')}
               >
                 Shop
               </HashLink>
@@ -162,7 +171,7 @@ const Header = () => {
                 smooth
                 to="/#New-Arrivals"
                 className="nav-link"
-                onClick={handleNavClick}
+                onClick={() => handleNavClick('#New-Arrivals')}
               >
                 New Arrivals
               </HashLink>
@@ -172,7 +181,7 @@ const Header = () => {
                 smooth
                 to="/#top-selling"
                 className="nav-link"
-                onClick={handleNavClick}
+                onClick={() => handleNavClick('#top-selling')}
               >
                 Top Selling
               </HashLink>
@@ -182,7 +191,7 @@ const Header = () => {
                 smooth
                 to="/#on-sale"
                 className="nav-link"
-                onClick={handleNavClick}
+                onClick={() => handleNavClick('#on-sale')}
               >
                 On Sale
               </HashLink>

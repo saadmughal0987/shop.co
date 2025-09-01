@@ -14,17 +14,6 @@ import Footer from "../../components/Footer/Footer";
 function HomePage() {
   const location = useLocation();
 
-  useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", "");
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 100);
-      }
-    }
-  }, [location]);
 
   return (
     <div>
