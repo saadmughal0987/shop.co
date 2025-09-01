@@ -42,7 +42,6 @@ const Header = () => {
           SHOP.CO
         </Link>
 
-        {/* Mobile cart icon */}
         <Link
           to="/add-to-cart-page"
           className="d-lg-none d-flex align-items-center ms-auto me-2"
